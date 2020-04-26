@@ -8,6 +8,7 @@ import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 export class InputButtonUnitComponent implements OnInit {
 
   @Output() submit: EventEmitter<string> = new EventEmitter();
+  @Output() deleteAll: EventEmitter<string> = new EventEmitter();
 
   item:string = '';
 
@@ -19,5 +20,9 @@ export class InputButtonUnitComponent implements OnInit {
   submitValue() {
     this.submit.emit(this.item);
     this.item = '';
+  }
+
+  deleteAllItems() {
+    this.deleteAll.emit();
   }
 }

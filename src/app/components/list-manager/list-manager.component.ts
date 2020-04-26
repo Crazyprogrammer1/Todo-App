@@ -34,4 +34,8 @@ export class ListManagerComponent {
   updateItem(item, changes) {
     this.todoListService.updateItem(item, changes);
   }
+
+  deleteAll() {
+    this.todoListService.deleteAll();
+  }
 }

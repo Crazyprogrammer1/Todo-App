@@ -1,4 +1,4 @@
-import { addTodoItem } from './../actions/global-configs.actions';
+import { addTodoItem, resetGlobalConfig } from './../actions/global-configs.actions';
 import { Injectable } from '@angular/core';
 import { TodoItem } from '../interfaces/todo-item';
 import * as fromGlobalStore from '../reducers/global-config.reducer';
@@ -48,5 +48,9 @@ export class TodoListService {
     const index = this.todoList.indexOf(item);
     this.todoList.splice(index, 1);
     this.saveList();
+  }
+
+  deleteAll() {
+    this.globalStore.dispatch(resetGlobalConfig({}));
   }
 }
